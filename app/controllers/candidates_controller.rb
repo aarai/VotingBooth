@@ -1,6 +1,6 @@
 class CandidatesController < ApplicationController
 
- # before_filter :authenticate_voter!, :except => :index
+ # before_filter :authenticate_admin!, :only => [:edit, :delete]
 
   #Lets Vote!
   def vote_up_voter
