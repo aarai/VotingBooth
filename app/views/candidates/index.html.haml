@@ -1,0 +1,36 @@
+%h1 All Candidates
+
+%table{:cellpadding => '5'}
+  - @candidates.each do |candidate|
+    %tr
+      %th Name:
+      %th Number of Votes:
+    %tr
+      %td
+        = candidate.name
+      %td{:align => 'middle'}
+        = candidate.votes_for
+      %td
+        -if admin_signed_in? or voter_signed_in?
+          = link_to 'Proceed to Vote', candidate_path(candidate)
+    %tr
+      %td
+      %td
+    -if admin_signed_in?
+      %td
+        = link_to 'Edit', edit_candidate_path(candidate)
+      %td
+        = link_to 'Destroy', candidate, :method => :delete, data: { confirm: 'Are you sure?' }
+      
+
+
+- if admin_signed_in?
+  %table
+    %tr
+      %td
+        = link_to 'New Candidate', new_candidate_path
+
+
+
+
+  

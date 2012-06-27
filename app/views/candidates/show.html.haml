@@ -1,0 +1,11 @@
+%p#notice= notice
+
+= link_to "Cast Vote for #{@candidate.name}", :action => 'vote_up_voter', :id=> @candidate.id
+
+-#
+  = link_to 'Edit', edit_candidate_path(@candidate)
+    \|
+%br
+%br
+%br
+= link_to 'Go Back', candidates_path
