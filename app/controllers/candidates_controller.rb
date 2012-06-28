@@ -26,9 +26,7 @@ class CandidatesController < ApplicationController
   # GET /candidates
   # GET /candidates.json
   def index
-    @candidates = Candidate.all
-    
-    @candidates_for_tally = Candidate.tally(
+    @candidates = Candidate.tally(
     {   :at_least => 0,
         :at_most => 10000,
         :limit => 10,
