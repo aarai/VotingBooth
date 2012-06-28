@@ -31,8 +31,8 @@ class CandidatesController < ApplicationController
         :at_most => 10000,
         :limit => 10,
         :order => 'vote_count desc',
-        :select => 'distinct items.*',
-        :joins  => :votes
+        (:select => 'distinct items.*',
+        :joins  => :votes)
     })
 
 
