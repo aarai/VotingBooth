@@ -1,11 +1,11 @@
 %h1 All Candidates
 
 %h3.winning
-  - unless @candidates.all == 0 
-    = "Current Winner: #{@candidates.first.name}"
+  - unless @candidates == 0 
+    = "Current Winner: #{@candidates_for_tally.first.name}"
 
 %table{:cellpadding => '5'}
-  - @candidates.each do |candidate|
+  - @candidates_for_tally.each do |candidate|
     %tr
       %th Name:
       %th Number of Votes:
