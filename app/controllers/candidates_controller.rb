@@ -27,7 +27,7 @@ class CandidatesController < ApplicationController
   # GET /candidates.json
   def index
     @candidates = Candidate.tally(
-    {   :at_least => 1,
+    {   :at_least => 0,
         :at_most => 10000,
         :limit => 10,
         :order => 'vote_count desc'
