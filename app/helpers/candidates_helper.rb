@@ -10,4 +10,13 @@ module CandidatesHelper
 		@winner_points = "Current Winner has: #{count.max} #{vote}"
 	end
 
+	def total_votes(candidates)
+		count = []
+
+		candidates.each do |c|
+			count << c.votes_count
+		end
+		count.size
+	end
+
 end
