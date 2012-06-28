@@ -1,7 +1,9 @@
 %h1 All Candidates
 
 %h3.winning
-  = "Current Winner: #{@candidates.first.name}"
+  = "Current Winner: #{@round_up.first.name}"
+
+ 
 
 %table{:cellpadding => '5'}
   - @candidates.each do |candidate|
@@ -12,7 +14,7 @@
       %td
         = candidate.name
       %td{:align => 'middle'}
-        = candidate.votes_count
+        = candidate.votes_count 
       %td
         -if admin_signed_in? or voter_signed_in?
           = link_to 'Proceed to Vote', candidate_path(candidate)
