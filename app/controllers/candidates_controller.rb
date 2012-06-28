@@ -22,11 +22,16 @@ class CandidatesController < ApplicationController
       redirect_to :action => :index, :notice => "You've already voted!"
     end
   end
-  
+
   # GET /candidates
   # GET /candidates.json
   def index
-    @candidates = Candidate.all
+    @candidates = Candidate.tally(
+    {   :at_least => 1,
+        :at_most => 10000,
+        :limit => 10,
+        :order => 'vote_count desc'
+    })
 
     respond_to do |format|
       format.html # index.html.erb
