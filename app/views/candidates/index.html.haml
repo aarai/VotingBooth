@@ -12,7 +12,7 @@
       %td
         = candidate.name
       %td{:align => 'middle'}
-        = candidate.votes_for
+        = candidate.votes_count
       %td
         -if admin_signed_in? or voter_signed_in?
           = link_to 'Proceed to Vote', candidate_path(candidate)
