@@ -9,6 +9,7 @@ ProjectFinal::Application.routes.draw do
   # Routes for candidates
   resources :candidates do
     get 'vote_up_voter', :on => :member
+    get 'vote_up_admin', :on => :member
   end
 
 

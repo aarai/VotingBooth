@@ -1,6 +1,6 @@
 class CandidatesController < ApplicationController
-
- # before_filter :authenticate_admin!, :only => [:edit, :delete]
+  before_filter :voter_rights, :only => [:show]
+  before_filter :keys_to_kingdom, :only => [:new,:create,:edit,:update,:destroy]
 
   #Lets Vote!
   def vote_up_voter

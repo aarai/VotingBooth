@@ -14,19 +14,20 @@
 
     %h3
       = link_to "Go Back Home", root_path
-
-    .voter_nav
-    - if voter_signed_in?
-      Signed in as #{current_voter.email}. Not you?
-      = link_to "Voter Sign out", destroy_voter_session_path, :method => :delete
-    - else
-      = link_to "Voter Sign up", new_voter_registration_path
-      = link_to "Voter Sign in", new_voter_session_path, {:style => 'margin-left:14px;'}
     
-    .admin_nav
-    - if admin_signed_in?
-      Signed in as #{current_admin.email}. Not you?
-      = link_to "Admin Sign out", destroy_admin_session_path, :method => :delete
-    - else
-      = link_to "Admin Section:", new_admin_session_path, {:style => 'margin-left:14px;'}
+    .navigation
+      - unless admin_signed_in?
+        - if voter_signed_in?
+          Signed in as #{current_voter.email}. Not you?
+          = link_to "Voter Sign out", destroy_voter_session_path, :method => :delete
+        - else
+          = link_to "Voter Sign up", new_voter_registration_path
+          = link_to "Voter Sign in", new_voter_session_path, {:style => 'margin-left:14px;'}
+    
+      - unless voter_signed_in?
+        - if admin_signed_in?
+          Signed in as #{current_admin.email}. Not you?
+          = link_to "Admin Sign out", destroy_admin_session_path, :method => :delete
+        - else
+          = link_to "Admin Section:", new_admin_session_path, {:style => 'margin-left:14px;'}
   = yield
