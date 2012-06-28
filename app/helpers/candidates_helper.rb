@@ -11,12 +11,12 @@ module CandidatesHelper
 	end
 
 	def total_votes(candidates)
-		count = []
+		count = 0
 
 		candidates.each do |c|
-			count << c.votes_count
+			count += c.votes_count
 		end
-		count.size
+		count
 	end
 
 end
