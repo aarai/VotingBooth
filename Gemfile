@@ -9,7 +9,6 @@ gem 'haml-rails'
 gem "devise"
 gem 'thumbs_up'
 gem 'awesome_print'
-gem 'cancan'
 
 group :development do	
   gem 'sqlite3'

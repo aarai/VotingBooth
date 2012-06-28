@@ -1,7 +1,8 @@
 %h1 All Candidates
 
 %h3.winning
-  = "Current Winner: #{@candidates.first.name}"
+  - unless @candidates.all == 0 
+    = "Current Winner: #{@candidates.first.name}"
 
 %table{:cellpadding => '5'}
   - @candidates.each do |candidate|
