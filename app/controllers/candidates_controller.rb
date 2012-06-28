@@ -28,8 +28,6 @@ class CandidatesController < ApplicationController
   def index
     @candidates = Candidate.all
 
-    @winner = @candidates.each {|c| c.votes_for }.max.name
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @candidates }
