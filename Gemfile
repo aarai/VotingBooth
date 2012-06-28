@@ -9,15 +9,14 @@ gem 'haml-rails'
 gem "devise"
 gem 'thumbs_up'
 gem 'awesome_print'
+gem 'pg'
 
 group :development do	
-  gem 'sqlite3'
   gem 'hpricot'
   gem 'ruby_parser'
 end
 
 group :production do
-  gem 'pg'
   gem 'thin'
 end
 
