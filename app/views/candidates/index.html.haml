@@ -14,21 +14,19 @@
     %tr
       %td
         = candidate.name
-      %td{:align => 'middle'}
-        = candidate.votes_count
-      %td{:align => 'middle'}
-        = "#{100 * candidate.votes_count / total_votes(@candidates)}%"
       %td
-        -if admin_signed_in? or voter_signed_in?
+        = candidate.votes_count
+      %td
+        = "#{100 * candidate.votes_count / total_votes(@candidates)}%"
+      -if admin_signed_in? or voter_signed_in?
+        %td    
           = link_to 'Proceed to Vote', candidate_path(candidate)
     %tr
-      %td
-      %td
-    -if admin_signed_in?
-      %td
-        = link_to 'Edit', edit_candidate_path(candidate)
-      %td
-        = link_to 'Destroy', candidate, :method => :delete, data: { confirm: 'Are you sure?' }
+      -if admin_signed_in?
+        %td
+          = link_to 'Edit', edit_candidate_path(candidate)
+        %td
+          = link_to 'Destroy', candidate, :method => :delete, data: { confirm: 'Are you sure?' }
       
 
 

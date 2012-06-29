@@ -3,3 +3,12 @@
 	font-width: bold;
 	color: green;
 }
+
+th {
+	width:184px;
+	background-color:#c6c6c6;
+}
+
+td {
+	text-align:center;
+}
